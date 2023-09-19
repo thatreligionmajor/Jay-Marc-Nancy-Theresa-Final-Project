@@ -10,7 +10,7 @@ import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
-import { CountdownTimer } from "./component/countDownTimer";
+import { CountdownTimer } from "./component/CountdownTimer";
 
 
 //create your first component
