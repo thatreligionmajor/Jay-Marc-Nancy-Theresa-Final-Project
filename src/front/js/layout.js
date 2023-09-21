@@ -40,17 +40,17 @@ const Layout = () => {
                         <Route element={<Home />} path="/" />
                         <Route element={<Featured />} path="/featured" />
                         {/* <Route element={<Single />} path="/single/:theid" /> */}
-                        <Route element={Guests} path="/guests" />
-                        <Route element={WhatToDo} path="/what-to-do" />
-                        <Route element={Vendors} path="/vendors" />
-                        <Route element={Schedule} path="/schedule" />
-                        <Route element={Transportation} path="/transportation" />
-                        <Route element={Hotels} path="/hotels" />
-                        <Route element={ImportantDates} path="/important-dates" />
-                        <Route element={GuestForm} path="/guest-form" />
-                        <Route element={VendorForm} path="/vendor-form" />
-                        <Route element={AboutContact} path="/about-contact" />
-                        <Route element={FAQ} path="/FAQ" />
+                        <Route element={<Guests />} path="/guests" />
+                        <Route element={<WhatToDo />} path="/what-to-do" />
+                        <Route element={<Vendors />} path="/vendors" />
+                        <Route element={<Schedule />} path="/schedule" />
+                        <Route element={<Transportation />} path="/transportation" />
+                        <Route element={<Hotels />} path="/hotels" />
+                        <Route element={<ImportantDates />} path="/important-dates" />
+                        <Route element={<GuestForm />} path="/guest-form" />
+                        <Route element={<VendorForm />} path="/vendor-form" />
+                        <Route element={<AboutContact />} path="/about-contact" />
+                        <Route element={<FAQ />} path="/FAQ" />
                         <Route element={<h1>Not found!</h1>} />
                     </Routes>
                     <Footer />
