@@ -41,3 +41,13 @@
     height: auto;
     object-fit: cover;
 }
+footer{
+    background-color: rgb(5, 83, 227);
+    outline-color: red;
+    text-align: center;
+    
+}
+.navLogo{
+    float: left;
+
+}
