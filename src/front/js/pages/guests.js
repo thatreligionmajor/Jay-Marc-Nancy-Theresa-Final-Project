@@ -9,8 +9,9 @@ export const Guests = props => {
 	const params = useParams();
 
 	return (
-		<div className="jumbotron">
-	
+		<div className="container">
+
+
 		</div>
 	);
 };

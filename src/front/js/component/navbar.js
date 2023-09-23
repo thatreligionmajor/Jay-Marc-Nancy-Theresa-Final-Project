@@ -1,8 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Context } from "../store/appContext";
 import "../../styles/home.css";
 
 export const Navbar = () => {
+	const { store, actions } = useContext(Context);
 	return (
 		<div>
 			{/* need to convert anchor tags to link */}
@@ -75,6 +77,17 @@ export const Navbar = () => {
 								</ul>
 							</li>
 						</ul>
+					</div>
+					<div className="ml-auto">
+						{!store.token ?
+							<Link to="/">
+								<button className="btn btn-primary">Return Home</button>
+							</Link>
+							:
+							<Link to="/">
+								<button onClick={() => actions.logout()} className="btn btn-primary">Logout</button>
+							</Link>
+						}
 					</div>
 				</div>
 			</nav>

@@ -12,7 +12,9 @@ import { Schedule } from "./pages/schedule";
 import { Transportation } from "./pages/transportation";
 import { Hotels } from "./pages/hotels";
 import { ImportantDates } from "./pages/importantDates";
-import { GuestForm } from "./pages/guestForm";
+import { Signup } from "./pages/signup";
+import { Login } from "./pages/login";
+import { Private } from "./pages/private";
 import { VendorForm } from "./pages/vendorForm";
 import { AboutContact } from "./pages/aboutContact";
 import { FAQ } from "./pages/FAQ";
@@ -40,17 +42,19 @@ const Layout = () => {
                         <Route element={<Home />} path="/" />
                         <Route element={<Featured />} path="/featured" />
                         {/* <Route element={<Single />} path="/single/:theid" /> */}
-                        <Route element={Guests} path="/guests" />
-                        <Route element={WhatToDo} path="/what-to-do" />
-                        <Route element={Vendors} path="/vendors" />
-                        <Route element={Schedule} path="/schedule" />
-                        <Route element={Transportation} path="/transportation" />
-                        <Route element={Hotels} path="/hotels" />
-                        <Route element={ImportantDates} path="/important-dates" />
-                        <Route element={GuestForm} path="/guest-form" />
-                        <Route element={VendorForm} path="/vendor-form" />
-                        <Route element={AboutContact} path="/about-contact" />
-                        <Route element={FAQ} path="/FAQ" />
+                        <Route element={<Guests />} path="/guests" />
+                        <Route element={<WhatToDo />} path="/what-to-do" />
+                        <Route element={<Vendors />} path="/vendors" />
+                        <Route element={<Schedule />} path="/schedule" />
+                        <Route element={<Transportation />} path="/transportation" />
+                        <Route element={<Hotels />} path="/hotels" />
+                        <Route element={<ImportantDates />} path="/important-dates" />
+                        <Route element={<Signup />} path="/signup" />
+                        <Route element={<Login />} path="/login" />
+                        <Route element={<Private />} path="/private" />
+                        {/* <Route element={VendorForm} path="/vendor-form" /> */}
+                        <Route element={<AboutContact />} path="/about-contact" />
+                        <Route element={<FAQ />} path="/FAQ" />
                         <Route element={<h1>Not found!</h1>} />
                     </Routes>
                     <Footer />
