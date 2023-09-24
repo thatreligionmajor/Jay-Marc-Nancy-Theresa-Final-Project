@@ -3,7 +3,7 @@ import { Context } from "../store/appContext";
 import "../../styles/home.css";
 import { Link, useNavigate } from "react-router-dom";
 
-const Signup = () => {
+export const Signup = () => {
     const { store, actions } = useContext(Context);
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -54,7 +54,7 @@ const Signup = () => {
             {/* need to add functionality to confirm password */}
             {/* </div> */}
             {/* </div> */}
-
+                        
 
             <Link to="/login">
                 <button onClick={submitRequest}>Submit</button>
@@ -67,4 +67,4 @@ const Signup = () => {
     );
 };
 
-export default Signup;
+

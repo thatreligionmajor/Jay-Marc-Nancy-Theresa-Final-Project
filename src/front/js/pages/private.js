@@ -3,7 +3,7 @@ import { Context } from "../store/appContext";
 import { useNavigate } from "react-router-dom";
 
 
-const Private = () => {
+export const Private = () => {
     const { store, actions } = useContext(Context);
     const navigate = useNavigate();
 
@@ -23,4 +23,3 @@ const Private = () => {
         </div>
     )
 }
-export default Private;

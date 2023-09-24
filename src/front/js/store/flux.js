@@ -23,7 +23,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 
 			login: async (email, password) => {
-
 				const options = {
 					method: 'POST',
 					headers: {
@@ -38,7 +37,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 				//edit the url to match your backend url
 				try {
-					const response = await fetch(process.env.BACKEND_URL + "/api/login", options)
+					const response = await fetch(process.env.BACKEND_URL + "api/token", options)
 					if (response.status !== 200) {
 						alert("Error!  Response Code: ", response.status)
 						return false;
@@ -50,7 +49,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					return true;
 				}
 				catch (error) {
-					console.log("login error!")
+					console.log("You have a login error!")
 				}
 			},
 
