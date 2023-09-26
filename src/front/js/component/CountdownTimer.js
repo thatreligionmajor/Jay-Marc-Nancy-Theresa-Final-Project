@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import rigoImageUrl from "../../img/rigo-baby.jpg";
-// import daysImage from "../../img/days.png";
+import daysImage from "../../img/days-img.png";
+import hoursImage from "../../img/hours-img.png";
+import minutesImage from "../../img/minutes-img.png";
+import secondsImage from "../../img/seconds-img.png";
+import "../../styles/timer.css";
 
 
 class CountdownTimer extends Component {
@@ -44,19 +48,19 @@ class CountdownTimer extends Component {
     const { days, hours, minutes, seconds } = this.state;
     return (
       <div>
-        <h1>Countdown Timer</h1>
+        
         <div className="timer">
           <div>
-            <span>{days}</span> Days
+            <span>{days}</span> <img src={daysImage} />
           </div>
           <div>
-            <span>{hours}</span> Hours
+            <span>{hours}</span> <img src={hoursImage} />
           </div>
           <div>
-            <span>{minutes}</span> Minutes
+            <span>{minutes}</span> <img src={minutesImage} />
           </div>
           <div>
-            <span>{seconds}</span> Seconds
+            <span>{seconds}</span> <img src={secondsImage} />
           </div>
         </div>
       </div>

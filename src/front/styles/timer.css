@@ -1,0 +1,25 @@
+img {
+    width: auto;
+    height: 50px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 5%;
+    border: 2px solid #fff;
+    box-shadow: 0 0 0 2px #fff;
+    transition: all 0.3s ease;
+}
+
+.timer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    margin: auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5%;
+    box-shadow: 0 0 0 2px #fff;
+    transition: all 0.3s ease;
+
+}
