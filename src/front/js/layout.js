@@ -17,6 +17,7 @@ import { Login } from "./pages/login";
 import { Private } from "./pages/private";
 import { AboutContact } from "./pages/aboutContact";
 import { FAQ } from "./pages/FAQ";
+import { NewReleases } from "./pages/newReleases";
 
 import injectContext from "./store/appContext";
 
@@ -39,8 +40,8 @@ const Layout = () => {
                 <ScrollToTop>
                     <Navbar />
                     <Routes>
-                        <Route element={<Home />} path="/" />                      
-
+                        <Route element={<Home />} path="/" />
+                        <Route element={<NewReleases />} path="/new-releases" />
                         <Route element={<Featured />} path="/featured" />
                         <Route element={<Guests />} path="/guests" />
                         <Route element={<WhatToDo />} path="/what-to-do" />

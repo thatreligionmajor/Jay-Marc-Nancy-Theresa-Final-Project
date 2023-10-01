@@ -45,6 +45,6 @@ export const Login = () => {
             </div>
         </>
     )
-}
+};
 
 

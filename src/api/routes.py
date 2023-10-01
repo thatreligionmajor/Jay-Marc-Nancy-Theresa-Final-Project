@@ -39,6 +39,11 @@ def get_hello():
     current_user = get_jwt_identity()
     return jsonify(logged_in_as=current_user), 200
 
+# @api.route('/new-releases', methods=['GET'])
+# def get_new_releases():
+#     newComicReleases = NewComicRelease.query.all()
+#     return jsonify({newComicReleases}), 200
+
    
 
 @api.route('/user', methods=['GET'])
