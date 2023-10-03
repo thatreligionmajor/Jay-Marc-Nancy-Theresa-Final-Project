@@ -9,7 +9,7 @@ import datetime
 
 from flask_sqlalchemy import SQLAlchemy
 
-Base=declarative_base()
+# Base=declarative_base()
 
 db = SQLAlchemy()
 
@@ -42,7 +42,7 @@ class Magic(db.Model):
     type = db.Column(db.String(80), unique=False, nullable=False),
     description = db.Column(db.String(120), unique=False, nullable=False),
     level = db.Column(db.String(80), unique=False, nullable=False),
-    image = db.Column(db.String(80), unique=False, nullable=False),
+    # image = db.Column(db.String(80), unique=False, nullable=False),
     # magic_favs = db.relationship('Favorites')
     # user_id = db.Column(db.Integer, db.ForeignKey('User.id'), nullable=False)
     # favorites = db.relationship(Favorites)
@@ -62,7 +62,7 @@ class Magic(db.Model):
         }
 
 class Favorites(db.Model):
-    __tablename__ = 'Favorites'
+    __tablename__ = 'Favorites'  
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey('User.id'), nullable=False)  
     magic_id = db.Column(db.Integer, db.ForeignKey('Magic.id'), nullable=False)  

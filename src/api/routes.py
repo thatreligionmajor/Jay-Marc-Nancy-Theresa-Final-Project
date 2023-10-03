@@ -88,10 +88,16 @@ def get_user(id):
 def create_user():
     body = request.get_json()
     user = User()
+    if "first_name" not in body:
+        raise APIException('You need to specify the first name', status_code=400)
+    if "last_name" not in body:
+        raise APIException('You need to specify the last name', status_code=400)
     if "email" not in body:
         raise APIException('You need to specify the email', status_code=400)
     if "password" not in body:
         raise APIException('You need to specify the password', status_code=400)
+    user.first_name = body["first_name"]
+    user.last_name = body["last_name"]    
     user.email = body["email"]
     user.password = body["password"]
     user.is_active = True
