@@ -9,27 +9,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 			token: null,
 			message: null,
 
-			
-
-			demo: [
-				{
-					title: "FIRST",
-					background: "white",
-					initial: "white"
-				},
-				{
-					title: "SECOND",
-					background: "white",
-					initial: "white"
-				}
-			],
-
 			comicVendors: [],
 			artVendors: [],
 			merchVendors: [],
 			events: [],
 			hotels: [],
-      faq_data: [],
+			faq_data: [],
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -37,10 +22,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 				getActions().changeColor(0, "green");
 			},
 			populateStoreEvents: () => {
-				setStore({events: data.events})
+				setStore({ events: data.events })
 			},
 			populateStoreHotels: () => {
-				setStore({hotels: data.hotels})
+				setStore({ hotels: data.hotels })
 			},
 
 			login: async (email, password) => {
@@ -109,14 +94,14 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 
 			getFAQData: () => {
-				fetch("../../../../data.json") 
-				.then((resp) => resp.json())
-				.then((data) => {
-					console.log("myString: ", data)
-					setStore({ faq_data: data.faq_data })
-				} )
+				fetch("../../../../data.json")
+					.then((resp) => resp.json())
+					.then((data) => {
+						console.log("myString: ", data)
+						setStore({ faq_data: data.faq_data })
+					})
 				//console log data
-		},				
+			},
 
 
 			getUserAdded: async (email, password) => {
@@ -192,7 +177,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			// 			"Content-Type": "application/json",
 			// 		},
 			// 		mode: "cors",
-					
+
 			// 	})
 			// 	.then((response) => response.json()) 
 			// 	// let data = await response.json();
@@ -203,38 +188,38 @@ const getState = ({ getStore, getActions, setStore }) => {
 			// },
 			fetchGetAllComicVendors: () => {
 				fetch(`${process.env.BACKEND_URL}/api/api/comics/publishers`)
-				.then((response) => response.json()) 
-				.then((data) => {
-					console.log(data);
-					setStore({comicVendors:data.results});
-				}) 
+					.then((response) => response.json())
+					.then((data) => {
+						console.log(data);
+						setStore({ comicVendors: data.results });
+					})
 			},
 			getArtVendors: () => {
-				fetch("../../../../data.json") 
-				.then((resp) => resp.json())
-				.then((data) => {
-					// console.log("getArtVendors: ", data)
-					setStore({ artVendors: data.artVendors })
-				} )
+				fetch("../../../../data.json")
+					.then((resp) => resp.json())
+					.then((data) => {
+						// console.log("getArtVendors: ", data)
+						setStore({ artVendors: data.artVendors })
+					})
 				//console.log(data);
 			},
 			getMerchVendors: () => {
-				fetch("../../../../data.json") 
-				.then((resp) => resp.json())
-				.then((data) => {
-					// console.log("getMerchVendors: ", data)
-					setStore({ merchVendors: data.merchVendors })
-				} )
+				fetch("../../../../data.json")
+					.then((resp) => resp.json())
+					.then((data) => {
+						// console.log("getMerchVendors: ", data)
+						setStore({ merchVendors: data.merchVendors })
+					})
 				//console.log(data);
 			},
 
 			getEvents: () => {
 				fetch("../../../../data.json") //need to edit the link
-				.then((resp) => resp.json())
-				.then((data) => {
-					console.log("myString: ", data)
-					setStore({ events: data.events })
-				} )
+					.then((resp) => resp.json())
+					.then((data) => {
+						console.log("myString: ", data)
+						setStore({ events: data.events })
+					})
 				//console log data
 			}
 		},
