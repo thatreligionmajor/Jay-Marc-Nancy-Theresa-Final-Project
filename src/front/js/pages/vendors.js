@@ -11,8 +11,9 @@ export const Vendors = props => {
     useEffect(() => {
         actions.getArtVendors();
         actions.getMerchVendors();
-    })
+    },[])
     // const params = useParams();
+
 
     return (
         <div className="container">

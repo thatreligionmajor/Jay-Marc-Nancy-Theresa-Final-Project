@@ -34,6 +34,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				getActions().populateStoreEvents();
 				getActions().populateStoreHotels();
 				getActions().fetchRkPostCards();
+				getActions().fetchGetAllComicVendors();
 			},
 			populateStoreEvents: () => {
 				setStore({ events: data.events })

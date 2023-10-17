@@ -9,10 +9,6 @@ import CountdownTimer from "../component/countdownTimer";
 export const Home = () => {
 	const { store, actions } = useContext(Context);
 
-	useEffect(() => {
-		actions.fetchGetAllComicVendors()
-	}, [])
-
 	return (
 
 		<div className="text-center">
