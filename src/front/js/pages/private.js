@@ -39,22 +39,25 @@ export const Private = () => {
             <p>From your account dashboard you can view and edit your bookmarked favorites.</p>
             <h2 className="fs2p0 badaboom font-spidey-yellow textBorderBlack">My Favorites</h2>
             <div className="favorites-container">
-            {console.log("line 43 private.js: ",store.favorites)}
+                {console.log("line 43 private.js: ", store.favorites)}
                 {store.favorites && store.favorites.map && store.favorites.map((item, index) => (
-                    <div key={index} className="font-white bgYellow m-3">
+                    <div key={index} className="font-white bgLightYellow m-3">
                         <div className="row favorite-items">
                             <div className="col-12">
                                 {getEventName(item.event_id)}<br />
                                 {getEventDate(item.event_id)}<br />
                                 {getEventTime(item.event_id)}
+
                             </div>
                         </div>
                         <div className="row">
                             <div className="col-12 my-2">
-                                <p>Reserve your spot!</p>
+                                <p className="fs2p0 badaboom textBorderBlack">Reserve your spot!</p>
                                 <button className="button-55 mx-3" id="reserveButton">Buy</button>
                                 <button className="button-55" id="deleteButton" onClick={() => actions.deleteFavorite(item.id)}>Remove</button>
+                                <hr className="font-black"></hr>
                             </div>
+
                         </div>
                     </div>
                 ))}

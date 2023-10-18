@@ -7,13 +7,13 @@
     justify-content: center;
     width: 40%;
     margin: 20px auto;
-    background-color: #f7d281;
+    background-color: #f1d18c;
 }
 
 .dashboard-wrapper {
     background-color: #1b729f;
     border-radius: 3%;
-    color: #f7d281;
+    color: #f1d18c;
     margin: auto;
     padding-bottom: 30px;
     width: 70%;
@@ -35,7 +35,7 @@
     font-size: 2rem;
     border: #1b729f;
     color: black;
-    background-color: #f7d281;
+    background-color: #f1d18c;
     margin: 10px;
 }
 
@@ -78,3 +78,5 @@
 .button-55:focus {
     box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
 }
+
+/* //random note to force commit */
