@@ -60,8 +60,7 @@ def get_publishers():
 def create_token():
     email = request.json.get("email", None)
     password = request.json.get("password", None)
-    user = User.query.filter_by(email=email, password=password).first()
-    if user is None:
+    if (user := User.query.filter_by(email=email, password=password).first()) is None:
         raise APIException('User not found', status_code=404)
     access_token = create_access_token(identity=email)
     user_id = user.id
@@ -88,8 +87,7 @@ def get_all_users():
 
 @api.route('/user/<int:id>', methods=['GET'])
 def get_user(id):
-    user = User.query.get(id)
-    if user is None:
+    if (user := User.query.get(id)) is None:
         raise APIException('User not found', status_code=404)
     return jsonify(user.serialize()), 200
 
@@ -103,8 +101,7 @@ def create_user():
     phone = request.json.get("phone", None)
     # user.is_active = True
 
-    user = User.query.filter_by(email=email).first()
-    if user is None:
+    if (user := User.query.filter_by(email=email).first()) is None:
         new_user_data = User(email=email, password=password,
                              first_name=first_name, last_name=last_name, phone=phone,)
         db.session.add(new_user_data)
@@ -116,8 +113,7 @@ def create_user():
 @api.route('/user/<int:id>', methods=['PUT'])
 def update_user(id):
     body = request.get_json()
-    user = User.query.get(id)
-    if user is None:
+    if (user := User.query.get(id)) is None:
         raise APIException('User not found', status_code=404)
     if "email" in body:
         user.email = body["email"]
@@ -131,8 +127,7 @@ def update_user(id):
 
 @api.route('/user/<int:id>', methods=['DELETE'])
 def delete_user(id):
-    user = User.query.get(id)
-    if user is None:
+    if (user := User.query.get(id)) is None:
         raise APIException('User not found', status_code=404)
     db.session.delete(user)
     db.session.commit()
@@ -149,8 +144,7 @@ def get_private():
 def forgot_password():
     email = request.json.get("email", None)
     token = secrets.token_urlsafe(16)
-    user = User.query.filter_by(email=email).first()
-    if user is None:
+    if (user := User.query.filter_by(email=email).first()) is None:
         raise APIException('User not found', status_code=404)
 
     reset_user = User(email=email, token=token)
@@ -181,8 +175,7 @@ def reset_password():
     password = request.json.get("password", None)
     confirmPassword = request.json.get("confirmPassword", None)
 
-    user = User.query.filter_by(email=email).first()
-    if user is None:
+    if (user := User.query.filter_by(email=email).first()) is None:
         raise APIException('User not found', status_code=404)
     if password != confirmPassword:
         raise APIException('Passwords do not match', status_code=404)

@@ -40,8 +40,7 @@ app.config['MAIL_USE_TLS']=True
 mail = Mail(app)
 mail.init_app(app)
 
-db_url = os.getenv("DATABASE_URL")
-if db_url is not None:
+if (db_url := os.getenv("DATABASE_URL")) is not None:
     app.config['SQLALCHEMY_DATABASE_URI'] = db_url.replace(
         "postgres://", "postgresql://")
 else:
